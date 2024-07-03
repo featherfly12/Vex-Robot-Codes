@@ -1,0 +1,15 @@
+float myVariable;
+
+int whenStarted1() {
+  Drivetrain.driveFor(forward, 1400.0, mm, true);
+  Drivetrain.turnFor(left, 90.0, degrees, true);
+  Drivetrain.driveFor(forward, 870.0, mm, true);
+  Drivetrain.turnFor(left, 90.0, degrees, true);
+  Drivetrain.driveFor(forward, 1400.0, mm, true);
+  Drivetrain.turnFor(right, 135.0, degrees, true);
+  Drivetrain.driveFor(forward, 950.0, mm, true);
+  Drivetrain.turnFor(right, 45.0, degrees, true);
+  Drivetrain.driveFor(forward, 575.0, mm, true);
+  Drivetrain.stop();
+  return 0;
+}
