@@ -1,0 +1,21 @@
+float myVariable;
+
+int whenStarted1() {
+  Motor10.spinFor(forward, 800.0, degrees, true);
+  while ((!Bumper8.pressing())) {
+    Drivetrain.driveFor(forward, 200.0, mm, true);
+    if (Bumper8.pressing()) {
+      Drivetrain.driveFor(reverse, 700.0, mm, true);
+      Drivetrain.turnFor(right, 90.0, degrees, true);
+    }
+  wait(20, msec);
+  }
+  return 0;
+}
+
+
+int main() {
+  calibrateDrivetrain();
+
+  whenStarted1();
+}
