@@ -1,0 +1,30 @@
+float myVariable;
+
+// "when started" hat block
+int whenStarted1() {
+  while (!(Distance9.distance(mm) < 100.0)) {
+    Drivetrain.driveFor(forward, 200.0, mm, true);
+  wait(20, msec);
+  }
+  Drivetrain.turnFor(left, 90.0, degrees, true);
+  while (!(Distance9.distance(mm) < 100.0)) {
+    Drivetrain.drive(forward);
+  wait(20, msec);
+  }
+  Drivetrain.turnFor(right, 90.0, degrees, true);
+  while (!(Distance9.distance(mm) < 100.0)) {
+    Drivetrain.drive(forward);
+  wait(20, msec);
+  }
+  Drivetrain.turnFor(right, 90.0, degrees, true);
+  Drivetrain.driveFor(forward, 1300.0, mm, true);
+  return 0;
+}
+
+
+int main() {
+  // Calibrate the Drivetrain Gyro
+  calibrateDrivetrain();
+
+  whenStarted1();
+}
