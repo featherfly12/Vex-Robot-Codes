@@ -1,0 +1,26 @@
+float myVariable;
+
+// "when started" hat block
+int whenStarted1() {
+  Drivetrain.driveFor(forward, 600.0, mm, true);
+  if (Color3.detects(red)) {
+    Drivetrain.turnFor(left, 90.0, degrees, true);
+    Drivetrain.driveFor(forward, 680.0, mm, true);
+  } else if (Color3.detects(green)) {
+    Drivetrain.driveFor(forward, 680.0, mm, true);
+  } else if (Color3.detects(blue)) {
+    Drivetrain.turnFor(right, 90.0, degrees, true);
+    Drivetrain.driveFor(forward, 680.0, mm, true);
+  } else {
+    Drivetrain.stop();
+  }
+  return 0;
+}
+
+
+int main() {
+  // Calibrate the Drivetrain Gyro
+  calibrateDrivetrain();
+
+  whenStarted1();  
+}
