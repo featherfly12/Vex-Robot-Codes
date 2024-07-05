@@ -1,0 +1,31 @@
+float myVariable;
+
+int whenStarted1() {
+  Color3.setLight(50, percent);
+  myVariable = 0.0;
+  while (true) {
+    while (Color3.detects(red)) {
+      Drivetrain.driveFor(forward, 25.0, mm, true);
+      myVariable = 0.0;
+      while ((myVariable < 4.0 && !Color3.detects(red))) {
+        Drivetrain.turnFor(right, 5.0, degrees, true);
+        myVariable = myVariable + 1.0;
+      wait(20, msec);
+      }
+      while ((myVariable > 3.0 && !Color3.detects(red))) {
+        Drivetrain.turnFor(left, 6.0, degrees, true);
+      wait(20, msec);
+      }
+    wait(20, msec);
+    }
+  wait(20, msec);
+  }
+  return 0;
+}
+
+
+int main() {
+  calibrateDrivetrain();
+
+  whenStarted1();
+}
